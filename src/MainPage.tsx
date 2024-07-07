@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function MainPage() {
     return (
         <div>
-            <h1>Liam O'Connor - Web Development Section</h1>
+            <h1>Liam O'Connor - Web Development Section CS5610.61065.202460</h1>
             <nav>
                 <ul>
                     <li><a href="https://northeastern.instructure.com/courses/184007/assignments/2270925">Assignment 1</a></li>
