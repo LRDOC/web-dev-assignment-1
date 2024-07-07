@@ -13,7 +13,7 @@ This project is a web application developed as part of the Web Development cours
 - **Source Code Repositories**: Provides links to all relevant source code repositories.
 
 ### Web Link
-TODO: Add web link
+https://sprightly-daffodil-bc90d3.netlify.app/
 
 ### Setup
 

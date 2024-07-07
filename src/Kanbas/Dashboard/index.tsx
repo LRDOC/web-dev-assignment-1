@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Dashboard() {
     return (
         <div id="wd-dashboard">
@@ -9,13 +7,16 @@ export default function Dashboard() {
             <hr />
             <div id="wd-dashboard-courses">
                 <div className="wd-dashboard-course">
-                    <img src="/images/reactjs.jpg" width={200} alt="React JS" />
+                    <img src="/images/reactjs.jpg" width={200} />
                     <div>
-                        <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/1234/Home">CS1234 React JS</a>
+                        <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/Home">
+                            CS1234 React JS
+                        </a>
                         <p className="wd-dashboard-course-title">Full Stack software developer</p>
-                        <a href="#/Kanbas/Courses/1234/Home">Go</a>
+                        <a href="#/Kanbas/Courses/Home">Go</a>
                     </div>
                 </div>
+                {/* Add more courses similarly */}
             </div>
         </div>
     );

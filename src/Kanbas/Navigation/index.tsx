@@ -1,16 +1,16 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navigation() {
     return (
-        <nav>
+        <nav className="sidebar">
             <ul>
-                <li><Link to="/kanbas/Dashboard">Dashboard</Link></li>
-                <li><Link to="/kanbas/Courses">Courses</Link></li>
-                <li><Link to="/kanbas/Account">Account</Link></li>
-                <li><Link to="/kanbas/Calendar">Calendar</Link></li>
-                <li><Link to="/kanbas/Inbox">Inbox</Link></li>
-                <li><Link to="/kanbas/Labs">Labs</Link></li>
+                <li><Link to="https://www.northeastern.edu">Northeastern</Link></li>
+                <li><Link to="/Kanbas/Account">Account</Link></li>
+                <li><Link to="/Kanbas/Dashboard">Dashboard</Link></li>
+                <li><Link to="/Kanbas/Courses/Home">Courses</Link></li>
+                <li><Link to="/Kanbas/Calendar">Calendar</Link></li>
+                <li><Link to="/Kanbas/Inbox">Inbox</Link></li>
+                <li><Link to="/Labs/Lab1">Labs</Link></li>
             </ul>
         </nav>
     );
