@@ -11,7 +11,7 @@ function App() {
                 <Sidebar />
                 <div className="content">
                     <Routes>
-                        <Route path="/" element={<Navigate to="/Kanbas/Dashboard" />} />
+                        <Route path="/" element={<Navigate to="/Labs/Lab1" />} />
                         <Route path="/Labs/*" element={<Labs />} />
                         <Route path="/Kanbas/*" element={<Kanbas />} />
                     </Routes>
