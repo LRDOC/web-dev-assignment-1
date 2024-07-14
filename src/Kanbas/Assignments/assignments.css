@@ -19,3 +19,14 @@
 #assignments-section .assignment-group input[type="checkbox"] {
     margin-right: 10px;
 }
+.link-style {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link-style:hover {
+    color: darkblue;
+}

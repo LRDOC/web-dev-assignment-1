@@ -29,7 +29,9 @@ export default function Assignments() {
             <ul>
                 {Object.keys(assignments).map((key) => (
                     <li key={key}>
-                        <a href="#">{assignments[Number(key)].title}</a>
+                        <button className="link-style" onClick={() => alert(assignments[Number(key)].title)}>
+                            {assignments[Number(key)].title}
+                        </button>
                     </li>
                 ))}
             </ul>
