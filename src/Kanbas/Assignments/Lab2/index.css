@@ -1,0 +1,34 @@
+#wd-lab2 {
+    padding: 20px;
+}
+
+#wd-id-selector-1 {
+    background-color: red;
+    color: white;
+}
+
+#wd-id-selector-2 {
+    background-color: yellow;
+    color: black;
+}
+
+.wd-class-selector {
+    background-color: yellow;
+    color: blue;
+}
+
+.d-block.d-sm-none {
+    display: block;
+}
+
+.d-none.d-sm-block.d-md-none {
+    display: none;
+}
+
+.d-none.d-md-block.d-lg-none {
+    display: none;
+}
+
+.d-none.d-lg-block.d-xl-none {
+    display: none;
+}
