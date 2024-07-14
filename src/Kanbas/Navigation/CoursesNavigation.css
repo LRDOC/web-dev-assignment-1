@@ -1,0 +1,38 @@
+.courses-sidebar {
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+}
+
+.courses-sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.courses-sidebar a:hover {
+    background-color: #f1f1f1;
+}
+
+.courses-sidebar a .icon {
+    margin-right: 10px;
+    color: red; /* icon color */
+}
+
+.courses-sidebar a:hover .icon {
+    color: darkred; /* hover icon color */
+}
+
+.courses-sidebar a.active {
+    background-color: red;
+    color: white;
+}
+
+.courses-sidebar a.active .icon {
+    color: white;
+}

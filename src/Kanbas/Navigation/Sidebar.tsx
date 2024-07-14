@@ -21,11 +21,11 @@ export default function Sidebar() {
             <Link to="/Kanbas/Calendar">
                 <span className="icon"><IoCalendarOutline /></span> Calendar
             </Link>
-            <Link to="/Kanbas/Settings">
-                <span className="icon"><LiaCogSolid /></span> Settings
-            </Link>
             <Link to="/Kanbas/Inbox">
                 <span className="icon"><FaInbox /></span> Inbox
+            </Link>
+            <Link to="/Kanbas/Settings">
+                <span className="icon"><LiaCogSolid /></span> Settings
             </Link>
         </div>
     );
