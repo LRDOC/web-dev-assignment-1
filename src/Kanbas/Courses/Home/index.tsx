@@ -1,8 +1,10 @@
+import React from 'react';
+
 export default function Home() {
     return (
         <div>
-            <h2>Course Home</h2>
-            {/* Course content */}
+            <h2>Home</h2>
+            <p>Welcome to the course home page.</p>
         </div>
     );
 }

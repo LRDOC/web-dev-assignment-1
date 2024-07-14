@@ -1,0 +1,21 @@
+#assignments-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#assignments-section input,
+#assignments-section select,
+#assignments-section .btn {
+    margin-bottom: 10px;
+}
+
+#assignments-section .assignment-group {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#assignments-section .assignment-group input[type="checkbox"] {
+    margin-right: 10px;
+}

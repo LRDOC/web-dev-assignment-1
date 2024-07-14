@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Labs from './Kanbas/Labs';
-import Lab2 from './Kanbas/Assignments/Lab2';
 import Kanbas from './Kanbas';
 import Sidebar from './Kanbas/Navigation/Sidebar';
+import Dashboard from './Kanbas/Dashboard/Dashboard';
+import Courses from './Kanbas/Courses';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -32,8 +33,9 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Navigate to="/Labs/Lab1" />} />
                             <Route path="/Labs/*" element={<Labs />} />
-                            <Route path="/Labs/Lab2" element={<Lab2 />} />
                             <Route path="/Kanbas/*" element={<Kanbas />} />
+                            <Route path="/Kanbas/Dashboard" element={<Dashboard />} />
+                            <Route path="/Kanbas/Courses/*" element={<Courses />} />
                         </Routes>
                     </div>
                 </div>
