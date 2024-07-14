@@ -10,22 +10,22 @@ export default function Sidebar() {
     return (
         <div className="sidebar">
             <Link to="/Kanbas/Dashboard">
-                <span className="icon"><AiOutlineDashboard/></span> Dashboard
+                <span className="icon"><AiOutlineDashboard /></span> Dashboard
             </Link>
             <Link to="/Kanbas/Courses">
-                <span className="icon"><LiaBookSolid/></span> Courses
+                <span className="icon"><LiaBookSolid /></span> Courses
             </Link>
             <Link to="/Kanbas/Account">
-                <span className="icon"><FaRegCircleUser/></span> Account
+                <span className="icon"><FaRegCircleUser /></span> Account
             </Link>
             <Link to="/Kanbas/Calendar">
-                <span className="icon"><IoCalendarOutline/></span> Calendar
+                <span className="icon"><IoCalendarOutline /></span> Calendar
             </Link>
             <Link to="/Kanbas/Inbox">
-                <span className="icon"><FaInbox/></span> Inbox
+                <span className="icon"><FaInbox /></span> Inbox
             </Link>
             <Link to="/Kanbas/Settings">
-                <span className="icon"><LiaCogSolid/></span> Settings
+                <span className="icon"><LiaCogSolid /></span> Settings
             </Link>
         </div>
     );
