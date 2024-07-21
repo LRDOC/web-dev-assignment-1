@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { AiOutlineDashboard } from "react-icons/ai";
 import { IoCalendarOutline } from "react-icons/io5";
 import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
 import { FaInbox, FaRegCircleUser } from "react-icons/fa6";
 
-export default function Sidebar() {
+export default function KanbasNavigation() {
     return (
         <div
             id="wd-kanbas-navigation"
@@ -17,7 +18,7 @@ export default function Sidebar() {
                 href="https://www.northeastern.edu/"
                 className="list-group-item bg-black border-0"
             >
-                <img src="/public/NEU.png" width="75px" alt="Northeastern" />
+                <img src="/images/NEU.png" width="75px" alt="Northeastern" />
             </a>
             <Link
                 id="wd-account-link"
