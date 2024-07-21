@@ -1,7 +1,9 @@
-import { LiaFileImportSolid, LiaFileExportSolid } from "react-icons/lia";
-import { IoMdSettings } from "react-icons/io";
-import { FaSearch } from "react-icons/fa";
-import { FiFilter } from "react-icons/fi";
+import React from 'react';
+import {LiaFileImportSolid, LiaFileExportSolid} from 'react-icons/lia';
+import {IoMdSettings} from 'react-icons/io';
+import {FaSearch} from 'react-icons/fa';
+import {FiFilter} from 'react-icons/fi';
+import {Link} from 'react-router-dom';
 
 export default function Grades() {
     return (
@@ -12,7 +14,7 @@ export default function Grades() {
                     className="btn btn-lg btn-secondary me-1 float-end"
                     type="button"
                 >
-                    <IoMdSettings className="fs-4" />
+                    <IoMdSettings className="fs-4"/>
                 </button>
                 <div className="btn-group me-1 float-end">
                     <button
@@ -20,14 +22,14 @@ export default function Grades() {
                         className="btn btn-lg btn-secondary dropdown-toggle"
                         type="button"
                     >
-                        <LiaFileExportSolid className="position-relative me-2" />
+                        <LiaFileExportSolid className="position-relative me-2"/>
                         Export
                     </button>
                     <ul className="dropdown-menu">
                         <li>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to="#">
                                 TODO
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -37,25 +39,23 @@ export default function Grades() {
                 >
                     <LiaFileImportSolid
                         className="position-relative me-2"
-                        style={{ bottom: "1px" }}
+                        style={{bottom: "1px"}}
                     />
                     Import
                 </button>
             </div>
-            <br />
-            <br />
-            <br />
-
-
+            <br/>
+            <br/>
+            <br/>
             <div id="wd-student-assignment-names" className="row mt-3">
                 <div className="col">
                     <label htmlFor="wd-student-name" className="fw-bold">
                         Student Names
                     </label>
                     <div className="input-group mb-3">
-            <span className="input-group-text">
-              <FaSearch />
-            </span>
+                        <span className="input-group-text">
+                            <FaSearch/>
+                        </span>
                         <input
                             type="text"
                             className="form-control"
@@ -69,9 +69,9 @@ export default function Grades() {
                         Assignment Names
                     </label>
                     <div className="input-group mb-3">
-            <span className="input-group-text">
-              <FaSearch />
-            </span>
+                        <span className="input-group-text">
+                            <FaSearch/>
+                        </span>
                         <input
                             type="text"
                             className="form-control"
@@ -88,10 +88,9 @@ export default function Grades() {
                         className="btn btn-lg btn-secondary me-1"
                         type="button"
                     >
-                        {" "}
                         <FiFilter
                             className="position-relative me-2"
-                            style={{ bottom: "1px" }}
+                            style={{bottom: "1px"}}
                         />
                         Apply Filters
                     </button>
@@ -117,22 +116,22 @@ export default function Grades() {
                         <th scope="col">Student Name</th>
                         <th scope="col" className="fw-normal text-center">
                             A1 SETUP
-                            <br />
+                            <br/>
                             Out of 100%
                         </th>
                         <th scope="col" className="fw-normal text-center">
                             A2 HTML
-                            <br />
+                            <br/>
                             Out of 100%
                         </th>
                         <th scope="col" className="fw-normal text-center">
                             A3 CSS
-                            <br />
+                            <br/>
                             Out of 100%
                         </th>
                         <th scope="col" className="fw-normal text-center">
                             A4 BOOTSTRAP
-                            <br />
+                            <br/>
                             Out of 100%
                         </th>
                     </tr>
@@ -141,76 +140,76 @@ export default function Grades() {
                     <tr>
                         <th className="text-danger fw-normal">Liam O'Connor</th>
                         <td>
-                            <input type="text" className="form-control" value="99.6%" />
+                            <input type="text" className="form-control" value="99.6%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="92.7%" />
+                            <input type="text" className="form-control" value="92.7%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="86.9%" />
+                            <input type="text" className="form-control" value="86.9%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="94.3%" />
+                            <input type="text" className="form-control" value="94.3%"/>
                         </td>
                     </tr>
                     <tr>
                         <th className="text-danger fw-normal">O'Connor Liam</th>
                         <td>
-                            <input type="text" className="form-control" value="98.8%" />
+                            <input type="text" className="form-control" value="98.8%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                     </tr>
                     <tr>
                         <th className="text-danger fw-normal">Lime O'Coxswain</th>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="97.7%" />
+                            <input type="text" className="form-control" value="97.7%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="98.9%" />
+                            <input type="text" className="form-control" value="98.9%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="99.2%" />
+                            <input type="text" className="form-control" value="99.2%"/>
                         </td>
                     </tr>
                     <tr>
                         <th className="text-danger fw-normal">Lime O'Coconut</th>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                     </tr>
                     <tr>
                         <th className="text-danger fw-normal">LOC</th>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                         <td>
-                            <input type="text" className="form-control" value="100%" />
+                            <input type="text" className="form-control" value="100%"/>
                         </td>
                     </tr>
                     </tbody>
