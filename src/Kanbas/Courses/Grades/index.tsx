@@ -139,7 +139,7 @@ export default function Grades() {
                     </thead>
                     <tbody>
                     <tr>
-                        <th className="text-danger fw-normal">Ash Ketchum</th>
+                        <th className="text-danger fw-normal">Liam O'Connor</th>
                         <td>
                             <input type="text" className="form-control" value="99.6%" />
                         </td>
@@ -154,7 +154,7 @@ export default function Grades() {
                         </td>
                     </tr>
                     <tr>
-                        <th className="text-danger fw-normal">Brock Harrison</th>
+                        <th className="text-danger fw-normal">O'Connor Liam</th>
                         <td>
                             <input type="text" className="form-control" value="98.8%" />
                         </td>
@@ -169,7 +169,7 @@ export default function Grades() {
                         </td>
                     </tr>
                     <tr>
-                        <th className="text-danger fw-normal">Misty Waterflower</th>
+                        <th className="text-danger fw-normal">Lime O'Coxswain</th>
                         <td>
                             <input type="text" className="form-control" value="100%" />
                         </td>
@@ -184,7 +184,7 @@ export default function Grades() {
                         </td>
                     </tr>
                     <tr>
-                        <th className="text-danger fw-normal">Samuel Oak</th>
+                        <th className="text-danger fw-normal">Lime O'Coconut</th>
                         <td>
                             <input type="text" className="form-control" value="100%" />
                         </td>
@@ -199,7 +199,7 @@ export default function Grades() {
                         </td>
                     </tr>
                     <tr>
-                        <th className="text-danger fw-normal">Gary Oak</th>
+                        <th className="text-danger fw-normal">LOC</th>
                         <td>
                             <input type="text" className="form-control" value="100%" />
                         </td>

@@ -1,4 +1,3 @@
-import KanbasNavigation from "../Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
@@ -7,6 +6,7 @@ import AssignmentEditor from "./Assignments/Editor";
 import { Navigate, Route, Routes } from "react-router";
 import { FaAlignJustify } from "react-icons/fa";
 import Grades from "./Grades";
+import CoursesNavigation from "./Navigation";
 
 export default function Courses() {
     return (
@@ -16,7 +16,7 @@ export default function Courses() {
                 Course 1234
             </h2>
             <hr />
-            <KanbasNavigation />
+            <CoursesNavigation/>
             <div className="wd-main-content-offset m-4">
                 <Routes>
                     <Route path="/" element={<Navigate to="Home" />} />
