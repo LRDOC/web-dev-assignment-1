@@ -5,9 +5,9 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import CoursesNavigation from '../Navigation/CoursesNavigation';
 import Home from './Home';
 import Modules from './Modules';
-import Assignments from '../Assignments';
-import Grades from '../Grades';
-import AssignmentEditor from '../Assignments/Editor';
+import Assignments from './Assignments';
+import Grades from './Grades';
+import AssignmentEditor from './Assignments/Editor';
 import './courses.css';
 
 export default function Courses() {

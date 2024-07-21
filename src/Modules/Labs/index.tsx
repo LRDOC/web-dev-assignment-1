@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Lab1 from '../Assignments/Lab1';
-import TOC from '../../Modules/TOC';
+import Lab1 from '../Lab1';
+import TOC from '../TOC';
 
 export default function Labs() {
     return (

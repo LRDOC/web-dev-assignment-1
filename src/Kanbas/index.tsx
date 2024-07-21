@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './Dashboard/Dashboard';
 import Home from './Courses/Home';
-import Account from './Account';
+import Account from './Courses/Account';
 import Calendar from './Calendar';
 import Inbox from './Inbox';
 import './Kanbas.css';
