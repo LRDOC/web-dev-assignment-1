@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Labs from './Modules/Labs';
 import Kanbas from './Kanbas';
 import Sidebar from './Kanbas/Navigation/Sidebar';
-import Dashboard from './Kanbas/Dashboard/Dashboard';
-import Courses from './Kanbas/Courses';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Modules from "./Kanbas/Courses/Modules";
 
 function App() {
     const [showHome, setShowHome] = useState(true);
@@ -32,7 +30,7 @@ function App() {
                     <div className="content">
                         <Routes>
                             <Route path="/" element={<Navigate to="/Labs/" />} />
-                            <Route path="/Labs/*" element={<Labs />} />
+                            <Route path="/Labs/*" element={<Modules />} />
                             <Route path="/Kanbas/*" element={<Kanbas />} />
 
                         </Routes>

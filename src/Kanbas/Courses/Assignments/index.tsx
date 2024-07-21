@@ -1,39 +1,118 @@
-import React from 'react';
-import './assignments.css';
-
-interface Assignment {
-    title: string;
-    description: string;
-}
-
-const assignments: Record<number, Assignment> = {
-    1: { title: 'Gather Ingredients', description: 'Gather all the necessary ingredients for making pancakes.' },
-    2: { title: 'Mix Ingredients', description: 'Mix all the ingredients to prepare the pancake batter.' },
-    3: { title: 'Cook Pancakes', description: 'Cook the pancakes on a hot griddle.' },
-    4: { title: 'Serve Pancakes', description: 'Serve the pancakes with your favorite toppings.' },
-    5: { title: 'Cleanup', description: 'Clean up the kitchen after making pancakes.' }
-};
+import AssignmentButtons from "./AssignmentButton";
+import LessonControlButtons from "../Modules/LessonControlButton";
+import AssignmentControlButtons from "./ControlPercent";
+import { BsGripVertical } from "react-icons/bs";
+import { FaSearch } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { GoTriangleDown } from "react-icons/go";
 
 export default function Assignments() {
     return (
-        <div id="assignments-section">
-            <div>
-                <input type="text" placeholder="Search for Assignments" />
-                <select>
-                    <option>Group</option>
-                    <option>Assignment</option>
-                </select>
-                <button className="btn btn-primary">+</button>
+        <div id="wd-assignments" className="text-nowrap">
+            <div className="d-flex align-items-center justify-content-between">
+                <div className="input-group">
+          <span className="input-group-text bg-white border-end-0">
+            <FaSearch />
+          </span>
+                    <input
+                        className="form-control form-control-lg border-start-0"
+                        type="text"
+                        id="wd-search-assignment"
+                        placeholder="Search..."
+                    />
+                </div>
+                <button
+                    id="wd-add-assignment-group"
+                    className="btn btn-lg btn-secondary me-1 float-end"
+                >
+                    <FaPlus
+                        className="position-relative me-2"
+                        style={{ bottom: "1px" }}
+                    />
+                    Group
+                </button>{" "}
+                <button
+                    id="wd-add-assignment"
+                    className="btn btn-lg btn-danger me-1 float-end"
+                >
+                    <FaPlus
+                        className="position-relative me-2"
+                        style={{ bottom: "1px" }}
+                    />
+                    Assignment
+                </button>
             </div>
-            <h3>PANCAKE ASSIGNMENTS 40% of Total</h3>
-            <ul>
-                {Object.keys(assignments).map((key) => (
-                    <li key={key}>
-                        <button className="link-style" onClick={() => alert(assignments[Number(key)].title)}>
-                            {assignments[Number(key)].title}
-                        </button>
+            <br />
+            <br />
+            <ul id="wd-assignments" className="list-group rounded-0">
+                <li
+                    id="wd-assignments-title"
+                    className="wd-assignments-title list-group-item p-0 mb-5 fs-5 border-gray"
+                >
+                    <div className="wd-assignments-title p-3 ps-2 bg-secondary">
+                        <BsGripVertical className="me-2 fs-3" />
+                        <GoTriangleDown className="me-2 fs-5" />
+                        <strong>ASSIGNMENTS</strong>
+                        <AssignmentControlButtons />
+                    </div>
+                    <li className="wd-assignment list-group-item p-3 ps-1 d-flex align-items-center">
+                        <AssignmentButtons />
+                        <div>
+                            <a
+                                href="#/Kanbas/Courses/1234/Assignments/123"
+                                className="text-dark fw-bold"
+                            >
+                                A1
+                            </a>
+                            <p className="fs-5 mb-0">
+                                <span className="text-danger">Multiple Modules</span> |{" "}
+                                <b>Not available until</b> May 14 at 12:00am | <br />
+                                <b>Due</b> May 21 at 11:59pm | 100pts
+                            </p>
+                        </div>
+                        <div className="ms-auto">
+                            <LessonControlButtons />
+                        </div>
                     </li>
-                ))}
+                    <li className="wd-assignment list-group-item p-3 ps-1 d-flex align-items-center">
+                        <AssignmentButtons />
+                        <div>
+                            <a
+                                href="#/Kanbas/Courses/1234/Assignments/123"
+                                className="text-dark fw-bold"
+                            >
+                                A2
+                            </a>
+                            <p className="fs-5 mb-0">
+                                <span className="text-danger">Multiple Modules</span> |{" "}
+                                <b>Not available until</b> May 20 at 12:00am | <br />
+                                <b>Due</b> May 27 at 11:59pm | 100pts
+                            </p>
+                        </div>
+                        <div className="ms-auto">
+                            <LessonControlButtons />
+                        </div>
+                    </li>
+                    <li className="wd-assignment list-group-item p-3 ps-1 d-flex align-items-center">
+                        <AssignmentButtons />
+                        <div>
+                            <a
+                                href="#/Kanbas/Courses/1234/Assignments/123"
+                                className="text-dark fw-bold"
+                            >
+                                A3
+                            </a>
+                            <p className="fs-5 mb-0">
+                                <span className="text-danger">Multiple Modules</span> |{" "}
+                                <b>Not available until</b> May 27 at 12:00am | <br />
+                                <b>Due</b> May 31 at 11:59pm | 100pts
+                            </p>
+                        </div>
+                        <div className="ms-auto">
+                            <LessonControlButtons />
+                        </div>
+                    </li>
+                </li>
             </ul>
         </div>
     );

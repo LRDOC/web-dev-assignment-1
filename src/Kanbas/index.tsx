@@ -1,11 +1,9 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './Dashboard/Dashboard';
-import Home from './Courses/Home';
 import Account from './Courses/Account';
-import Calendar from './Calendar';
-import Inbox from './Inbox';
 import './Kanbas.css';
+import Courses from "./Courses";
 
 function Kanbas() {
     return (
@@ -14,9 +12,7 @@ function Kanbas() {
                 <Route path="/" element={<Navigate to="Dashboard" />} />
                 <Route path="Account" element={<Account />} />
                 <Route path="Dashboard" element={<Dashboard />} />
-                <Route path="Courses/Home" element={<Home />} />
-                <Route path="Calendar" element={<Calendar />} />
-                <Route path="Inbox" element={<Inbox />} />
+                <Route path="Courses/:id" element={<Courses />} />
             </Routes>
         </div>
     );
