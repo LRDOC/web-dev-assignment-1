@@ -1,6 +1,7 @@
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./checkmark";
 import { MdDoNotDisturbAlt } from "react-icons/md";
+
 export default function ModulesControls() {
     return (
         <div id="wd-modules-controls" className="text-nowrap">
@@ -23,46 +24,46 @@ export default function ModulesControls() {
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <a
+                        <button
                             id="wd-publish-all-modules-and-items-btn"
                             className="dropdown-item"
-                            href="#"
+                            type="button"
                         >
                             <GreenCheckmark />
                             Publish all modules and items
-                        </a>{" "}
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             id="wd-publish-modules-only-button"
                             className="dropdown-item"
-                            href="#"
+                            type="button"
                         >
                             <GreenCheckmark />
                             Publish modules only
-                        </a>{" "}
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             id="wd-unpublish-all-modules-and-items"
                             className="dropdown-item"
-                            href="#"
+                            type="button"
                         >
                             <MdDoNotDisturbAlt className="me-2 fs-5" />
                             Unpublish all modules and more
-                        </a>{" "}
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             id="wd-unpublish-modules-only"
                             className="dropdown-item"
-                            href="#"
+                            type="button"
                         >
                             <MdDoNotDisturbAlt className="me-2 fs-5" />
                             Unpublish modules only
-                        </a>{" "}
+                        </button>
                     </li>
-                </ul>{""}
+                </ul>
             </div>
 
             <button
@@ -70,7 +71,6 @@ export default function ModulesControls() {
                 className="btn btn-lg btn-secondary me-1 float-end"
                 type="button"
             >
-                {" "}
                 Show Less ...
             </button>
 

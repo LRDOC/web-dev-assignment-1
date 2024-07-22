@@ -116,20 +116,21 @@ function Tabs() {
             <h3>Tabs</h3>
             <ul className="nav nav-tabs">
                 <li className="nav-item">
-                    <a className="nav-link active" href="#">Active</a>
+                    <button className="nav-link active">Active</button>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <button className="nav-link">Link</button>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <button className="nav-link">Link</button>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link disabled" href="#">Disabled</a>
+                    <button className="nav-link disabled" disabled>Disabled</button>
                 </li>
             </ul>
         </>
     );
+
 }
 
 function Cards() {
