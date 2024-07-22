@@ -5,34 +5,39 @@ export default function TOC() {
     return (
         <ul className="nav nav-pills">
             <li className="nav-item">
+                <a id="wd-a" href="#/Labs" className="nav-link">
+                    Labs
+                </a>
+            </li>
+            <li className="nav-item">
                 <a
                     id="wd-a1"
-                    href="/Labs/Lab1"
+                    href="#/Labs/Lab1"
                     className={`nav-link ${pathname.includes("Lab1") ? "active" : ""}`}
                 >
-                    Lab 1 - July 8th
+                    Lab 1
                 </a>
             </li>
             <li className="nav-item">
                 <a
                     id="wd-a2"
-                    href="/Labs/Lab2"
+                    href="#/Labs/Lab2"
                     className={`nav-link ${pathname.includes("Lab2") ? "active" : ""}`}
                 >
-                    Lab 2 - July 15th
+                    Lab 2
                 </a>
             </li>
             <li className="nav-item">
                 <a
                     id="wd-a3"
-                    href="/Labs/Lab3"
+                    href="#/Labs/Lab3"
                     className={`nav-link ${pathname.includes("Lab3") ? "active" : ""}`}
                 >
-                    Lab 3 - July 22nd
+                    Lab 3
                 </a>
             </li>
             <li className="nav-item">
-                <a id="wd-k" href="/Kanbas" className="nav-link">
+                <a id="wd-k" href="#/Kanbas" className="nav-link">
                     Kanbas
                 </a>
             </li>
