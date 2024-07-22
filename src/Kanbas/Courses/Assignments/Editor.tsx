@@ -1,4 +1,13 @@
+import React from "react";
+import db from "../../Database";
+import {Link, useParams} from "react-router-dom";
+
 export default function AssignmentEditor() {
+    const {aid, cid} = useParams();
+    const assignment = db.assignments.find(
+        (assignment) => assignment._id === aid
+    );
+
     return (
         <div id="wd-assignments-editor" className="container">
             <form>
@@ -8,7 +17,7 @@ export default function AssignmentEditor() {
                         type="text"
                         className="form-control"
                         id="wd-name"
-                        placeholder="A1"
+                        value={assignment?.title}
                     />
                 </div>
                 <div className="form-group">
@@ -185,7 +194,7 @@ export default function AssignmentEditor() {
                                 type="date"
                                 className="form-control mb-3"
                                 id="wd-due-date"
-                                value="2024-05-13"
+                                value={assignment?.enddate ?? ""}
                             />
                             <div className="row">
                                 <div className="col">
@@ -193,13 +202,13 @@ export default function AssignmentEditor() {
                                         htmlFor="wd-available-from"
                                         className="form-label fw-bold"
                                     >
-                                        Available from
+                                        Available From
                                     </label>
                                     <input
                                         type="date"
                                         className="form-control mb-3"
                                         id="wd-available-from"
-                                        value="2024-05-06"
+                                        value={assignment?.startdate ?? ""}
                                     />
                                 </div>
                                 <div className="col">
@@ -213,7 +222,7 @@ export default function AssignmentEditor() {
                                         type="date"
                                         className="form-control mb-3"
                                         id="wd-available-until"
-                                        value="2024-05-20"
+                                        value={assignment?.enddate ?? ""}
                                     />
                                 </div>
                             </div>
@@ -224,13 +233,19 @@ export default function AssignmentEditor() {
                 <div className="form-group row mb-3">
                     <div className="col-sm-3"></div>
                     <div className="col-sm-9 text-end">
-                        <hr />
-                        <button type="button" className="btn btn-secondary me-2">
+                        <hr/>
+                        <Link
+                            to={`/Kanbas/Courses/${cid}/Assignments`}
+                            className="btn btn-secondary me-2"
+                        >
                             Cancel
-                        </button>
-                        <button type="submit" className="btn btn-danger">
+                        </Link>
+                        <Link
+                            to={`/Kanbas/Courses/${cid}/Assignments`}
+                            className="btn btn-danger"
+                        >
                             Save
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </form>

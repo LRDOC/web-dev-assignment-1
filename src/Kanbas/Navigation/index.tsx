@@ -19,7 +19,7 @@ export default function KanbasNavigation() {
                 rel="noreferrer"
                 className="list-group-item bg-black border-0"
             >
-                <img src="/images/NEU.png" width="1201" alt="Northeastern" />
+                <img src="/images/NEU.png" width="75px" alt="Northeastern" />
             </a>
             <Link
                 id="wd-account-link"
