@@ -1,15 +1,17 @@
 import React from 'react';
 import './index.css';
-import { VscAccount } from 'react-icons/vsc';
-import { AiOutlineDashboard } from 'react-icons/ai';
-import { FaBookBible, FaCalendar, FaEnvelopeOpenText, FaRegClock } from 'react-icons/fa6';
+
+import {VscAccount} from 'react-icons/vsc';
+import {AiOutlineDashboard} from 'react-icons/ai';
+import {FaBookBible, FaCalendar, FaEnvelopeOpenText, FaRegClock} from 'react-icons/fa6';
 
 function StylingWithStyleAttribute() {
     return (
         <>
             <h3>Styling with the STYLE attribute</h3>
-            <p style={{ backgroundColor: 'blue', color: 'white' }}>
-                Style attribute allows configuring look and feel right on the element. Although it's very convenient it is considered bad practice and you should avoid using the style attribute.
+            <p style={{backgroundColor: 'blue', color: 'white'}}>
+                Style attribute allows configuring look and feel right on the element. Although it's very convenient it is considered bad practice and you
+                should avoid using the style attribute.
             </p>
         </>
     );
@@ -52,7 +54,7 @@ function Forms() {
             <h3>Forms</h3>
             <div className="mb-3">
                 <label htmlFor="input1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="input1" placeholder="name@example.com" />
+                <input type="email" className="form-control" id="input1" placeholder="name@example.com"/>
             </div>
             <div className="mb-3">
                 <label htmlFor="textarea1" className="form-label">Example textarea</label>
@@ -69,10 +71,10 @@ function Addons() {
             <div className="input-group mb-3">
                 <span className="input-group-text">$</span>
                 <span className="input-group-text">0.00</span>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control"/>
             </div>
             <div className="input-group">
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control"/>
                 <span className="input-group-text">$</span>
                 <span className="input-group-text">0.00</span>
             </div>
@@ -88,13 +90,13 @@ function ResponsiveForms() {
                 <div className="mb-3 row">
                     <label htmlFor="email1" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="email1" placeholder="john@doe.com" />
+                        <input type="text" className="form-control" id="email1" placeholder="john@doe.com"/>
                     </div>
                 </div>
                 <div className="mb-3 row">
                     <label htmlFor="password1" className="col-sm-2 col-form-label">Password</label>
                     <div className="col-sm-10">
-                        <input type="password" id="password1" className="form-control" />
+                        <input type="password" id="password1" className="form-control"/>
                     </div>
                 </div>
                 <div className="mb-3 row">
@@ -134,11 +136,11 @@ function Cards() {
     return (
         <>
             <h3>Cards</h3>
-            <div className="card" style={{ width: '18rem' }}>
+            <div className="card" style={{width: '18rem'}}>
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">Some quick example text to fill up the card.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <button className="btn btn-primary">Go somewhere</button>
                 </div>
             </div>
         </>
@@ -150,19 +152,19 @@ function Switches() {
         <>
             <h3>Switches</h3>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="switch1" />
+                <input className="form-check-input" type="checkbox" id="switch1"/>
                 <label className="form-check-label" htmlFor="switch1">Default switch checkbox input</label>
             </div>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="switch2" checked />
+                <input className="form-check-input" type="checkbox" id="switch2" checked/>
                 <label className="form-check-label" htmlFor="switch2">Checked switch checkbox input</label>
             </div>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="switch3" disabled />
+                <input className="form-check-input" type="checkbox" id="switch3" disabled/>
                 <label className="form-check-label" htmlFor="switch3">Disabled switch checkbox input</label>
             </div>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="switch4" checked disabled />
+                <input className="form-check-input" type="checkbox" id="switch4" checked disabled/>
                 <label className="form-check-label" htmlFor="switch4">Disabled checked switch checkbox input</label>
             </div>
         </>
@@ -174,7 +176,7 @@ function Range() {
         <>
             <h3>Range</h3>
             <label htmlFor="range1" className="form-label">Example range</label>
-            <input type="range" className="form-range" min="0" max="5" step="0.5" id="range1" />
+            <input type="range" className="form-range" min="0" max="5" step="0.5" id="range1"/>
         </>
     );
 }
@@ -199,8 +201,8 @@ function BackgroundColors() {
             <p className="wd-bg-color-red wd-fg-color-black">
                 This background of this paragraph is red but
                 <span className="wd-bg-color-green wd-fg-color-white">
-                    the background of this text is green and the foreground white
-                </span>
+          the background of this text is green and the foreground white
+        </span>
             </p>
         </div>
     );
@@ -225,17 +227,23 @@ function Padding() {
         <div id="wd-css-paddings">
             <h2>Padding</h2>
             <div
-                className="wd-padded-top-left wd-border-fat wd-border-red wd-border-solid wd-bg-color-yellow"
+                className="wd-padded-top-left wd-border-fat
+      wd-border-red wd-border-solid
+      wd-bg-color-yellow"
             >
                 Padded top left
             </div>
             <div
-                className="wd-padded-bottom-right wd-border-fat wd-border-blue wd-border-solid wd-bg-color-yellow"
+                className="wd-padded-bottom-right wd-border-fat
+      wd-border-blue wd-border-solid
+      wd-bg-color-yellow"
             >
                 Padded bottom right
             </div>
             <div
-                className="wd-padding-fat wd-border-fat wd-border-yellow wd-border-solid wd-bg-color-blue wd-fg-color-white"
+                className="wd-padding-fat wd-border-fat
+      wd-border-yellow wd-border-solid
+      wd-bg-color-blue wd-fg-color-white"
             >
                 Padded all around
             </div>
@@ -248,17 +256,30 @@ function Margins() {
         <div id="wd-css-margins">
             <h2>Margins</h2>
             <div
-                className="wd-margin-bottom wd-padded-top-left wd-border-fat wd-border-red wd-border-solid wd-bg-color-yellow"
+                className="wd-margin-bottom
+      wd-padded-top-left
+      wd-border-fat wd-border-red
+      wd-border-solid
+      wd-bg-color-yellow"
             >
                 Margin bottom
             </div>
             <div
-                className="wd-margin-right-left wd-padded-bottom-right wd-border-fat wd-border-blue wd-border-solid wd-bg-color-yellow"
+                className="wd-margin-right-left
+      wd-padded-bottom-right
+      wd-border-fat wd-border-blue
+      wd-border-solid
+      wd-bg-color-yellow"
             >
                 Margin left right
             </div>
             <div
-                className="wd-margin-all-around wd-padding-fat wd-border-fat wd-border-yellow wd-border-solid wd-bg-color-blue wd-fg-color-white"
+                className="wd-margin-all-around
+      wd-padding-fat wd-border-fat
+      wd-border-yellow
+      wd-border-solid
+      wd-bg-color-blue
+      wd-fg-color-white"
             >
                 Margin all around
             </div>
@@ -271,22 +292,29 @@ function Corners() {
         <div id="wd-css-borders">
             <h3>Rounded corners</h3>
             <p
-                className="wd-rounded-corners-top wd-border-thin wd-border-blue wd-border-solid wd-padding-fat"
+                className="wd-rounded-corners-top wd-border-thin
+     wd-border-blue wd-border-solid wd-padding-fat"
             >
                 Rounded corners on the top
             </p>
             <p
-                className="wd-rounded-corners-bottom wd-border-thin wd-border-blue wd-border-solid wd-padding-fat"
+                className="wd-rounded-corners-bottom
+     wd-border-thin wd-border-blue wd-border-solid
+     wd-padding-fat"
             >
                 Rounded corners at the bottom
             </p>
             <p
-                className="wd-rounded-corners-all-around wd-border-thin wd-border-blue wd-border-solid wd-padding-fat"
+                className="wd-rounded-corners-all-around
+     wd-border-thin wd-border-blue wd-border-solid
+     wd-padding-fat"
             >
                 Rounded corners all around
             </p>
             <p
-                className="wd-rounded-corners-inline wd-border-thin wd-border-blue wd-border-solid wd-padding-fat"
+                className="wd-rounded-corners-inline
+     wd-border-thin wd-border-blue wd-border-solid
+     wd-padding-fat"
             >
                 Different rounded corners
             </p>
@@ -457,12 +485,12 @@ function ReactIconsSampler() {
         <div id="wd-react-icons-sampler" className="mb-4">
             <h3>React Icons Sampler</h3>
             <div className="d-flex">
-                <VscAccount className="fs-3 text" />
-                <AiOutlineDashboard className="fs-3 text" />
-                <FaBookBible className="fs-3 text" />
-                <FaCalendar className="fs-3 text" />
-                <FaEnvelopeOpenText className="fs-3 text" />
-                <FaRegClock className="fs-3 text" />
+                <VscAccount className="fs-3 text"/>
+                <AiOutlineDashboard className="fs-3 text"/>
+                <FaBookBible className="fs-3 text"/>
+                <FaCalendar className="fs-3 text"/>
+                <FaEnvelopeOpenText className="fs-3 text"/>
+                <FaRegClock className="fs-3 text"/>
             </div>
         </div>
     );
@@ -472,9 +500,9 @@ function ScreenSizeLabel() {
     return (
         <div id="wd-screen-size-label">
             <div className="d-block d-sm-none">XS - Extra Small (&lt;576px)</div>
-            <div className="d-none d-sm-block d-md-none">S - Small (≥576px) </div>
+            <div className="d-none d-sm-block d-md-none">S - Small (≥576px)</div>
             <div className="d-none d-md-block d-lg-none"> M - Medium (≥768px)</div>
-            <div className="d-none d-lg-block d-xl-none">L - Large (≥992px) </div>
+            <div className="d-none d-lg-block d-xl-none">L - Large (≥992px)</div>
             <div className="d-none d-xl-block d-xxl-none">
                 {" "}
                 XL - Extra Large (≥1200px)
@@ -490,30 +518,30 @@ export default function Lab2() {
     return (
         <div className="container" id="wd-lab2">
             <h2>Lab 2 - Cascading Style Sheets</h2>
-            <StylingWithStyleAttribute />
-            <ExternalCSSStyling />
-            <GridSystem />
-            <Forms />
-            <Addons />
-            <ResponsiveForms />
-            <Tabs />
-            <Cards />
-            <Switches />
-            <Range />
-            <ForegroundColors />
-            <BackgroundColors />
-            <Borders />
-            <Padding />
-            <Margins />
-            <Corners />
-            <Dimensions />
-            <Positions />
-            <Zindex />
-            <Float />
-            <GridLayout />
-            <Flex />
-            <ReactIconsSampler />
-            <ScreenSizeLabel />
+            <StylingWithStyleAttribute/>
+            <ExternalCSSStyling/>
+            <GridSystem/>
+            <Forms/>
+            <Addons/>
+            <ResponsiveForms/>
+            <Tabs/>
+            <Cards/>
+            <Switches/>
+            <Range/>
+            <ForegroundColors/>
+            <BackgroundColors/>
+            <Borders/>
+            <Padding/>
+            <Margins/>
+            <Corners/>
+            <Dimensions/>
+            <Positions/>
+            <Zindex/>
+            <Float/>
+            <GridLayout/>
+            <Flex/>
+            <ReactIconsSampler/>
+            <ScreenSizeLabel/>
         </div>
     );
 }

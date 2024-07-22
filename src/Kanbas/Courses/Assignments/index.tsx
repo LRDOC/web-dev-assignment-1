@@ -59,7 +59,7 @@ export default function Assignments() {
                         <AssignmentButtons />
                         <div>
                             <a
-                                href="#/Kanbas/Courses/1234/Assignments/123"
+                                href="/Kanbas/Courses/1234/Assignments/123"
                                 className="text-dark fw-bold"
                             >
                                 A1
@@ -78,7 +78,7 @@ export default function Assignments() {
                         <AssignmentButtons />
                         <div>
                             <a
-                                href="#/Kanbas/Courses/1234/Assignments/123"
+                                href="/Kanbas/Courses/1234/Assignments/123"
                                 className="text-dark fw-bold"
                             >
                                 A2
@@ -97,7 +97,7 @@ export default function Assignments() {
                         <AssignmentButtons />
                         <div>
                             <a
-                                href="#/Kanbas/Courses/1234/Assignments/123"
+                                href="/Kanbas/Courses/1234/Assignments/123"
                                 className="text-dark fw-bold"
                             >
                                 A3
