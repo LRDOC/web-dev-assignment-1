@@ -3,11 +3,17 @@ import GreenCheckmark from "./checkmark";
 import {MdDoNotDisturbAlt} from "react-icons/md";
 import ModuleEditor from "./ModuleEditor";
 
-export default function ModulesControls({moduleName, setModuleName, addModule,}: {
+interface ModulesControlsProps { // https://stackoverflow.com/questions/73237782/how-to-pass-an-interface-as-a-prop-in-react-w-typescript
     moduleName: string;
-    setModuleName: (title: string) => void;
+    setModuleName: (name: string) => void;
     addModule: () => void;
-}) {
+}
+
+export default function ModulesControls({
+                                            moduleName,
+                                            setModuleName,
+                                            addModule,
+                                        }: ModulesControlsProps) {
     return (
         <div id="wd-modules-controls" className="text-nowrap">
             <button
@@ -31,47 +37,42 @@ export default function ModulesControls({moduleName, setModuleName, addModule,}:
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <a
+                        <button
                             id="wd-publish-all-modules-and-items-btn"
                             className="dropdown-item"
-                            href="#"
                         >
                             <GreenCheckmark/>
                             Publish all modules and items
-                        </a>{" "}
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             id="wd-publish-modules-only-button"
                             className="dropdown-item"
-                            href="#"
                         >
                             <GreenCheckmark/>
                             Publish modules only
-                        </a>{" "}
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             id="wd-unpublish-all-modules-and-items"
                             className="dropdown-item"
-                            href="#"
                         >
                             <MdDoNotDisturbAlt className="me-2 fs-5"/>
                             Unpublish all modules and items
-                        </a>{" "}
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             id="wd-unpublish-modules-only"
                             className="dropdown-item"
-                            href="#"
                         >
                             <MdDoNotDisturbAlt className="me-2 fs-5"/>
                             Unpublish modules only
-                        </a>{" "}
+                        </button>
                     </li>
                 </ul>
-                {" "}
             </div>
 
             <button
@@ -79,7 +80,6 @@ export default function ModulesControls({moduleName, setModuleName, addModule,}:
                 className="btn btn-lg btn-secondary me-1 float-end"
                 type="button"
             >
-                {" "}
                 Collapse All
             </button>
 
