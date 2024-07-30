@@ -1,49 +1,52 @@
-import React from "react";
-import db from "../../Database";
-import {Link, useParams} from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {addAssignment, updateAssignment,} from "./reducer";
 
 export default function AssignmentEditor() {
-    const {aid, cid} = useParams();
-    const assignment = db.assignments.find(
-        (assignment) => assignment._id === aid
-    );
-
+    const {cid, aid} = useParams();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const {assignments} = useSelector((state: any) => state.assignmentsReducer);
+    const courseAssignments = assignments.filter(
+        (assignment: any) => assignment.course === cid)
+    const courseAssignment = courseAssignments.find((assignment: any) => assignment._id === aid)
+    const [assignment, setAssignment] = useState({
+        title: courseAssignment?.title || "New Assignment Title",
+        course: cid,
+        description: courseAssignment?.description || "New Assignment Description",
+        points: courseAssignment?.points || "100",
+        duedate: courseAssignment?.duedate || "",
+        startdate: courseAssignment?.startdate || "",
+        enddate: courseAssignment?.enddate || "",
+        _id: courseAssignment?._id || "1234"
+    });
     return (
         <div id="wd-assignments-editor" className="container">
             <form>
                 <div id="wd-name" className="form-group">
                     <label htmlFor="wd-name">Assignment Name</label>
                     <input
-                        type="text"
                         className="form-control"
                         id="wd-name"
-                        value={assignment?.title}
+                        value={assignment.title || ""}
+                        onChange={(e) =>
+                            setAssignment({...assignment, title: e.target.value})
+                        }
                     />
                 </div>
                 <div className="form-group">
                     <label htmlFor="wd-description"></label>
-                    <p className="form-control" id="wd-description">
-                        The assignment is{" "}
-                        <span className="text-danger">available online</span>
-                        <br />
-                        <br />
-                        Submit a link to the landing page of your Web application running on
-                        Netlify.
-                        <br />
-                        <br />
-                        The landing page should include the following:
-                        <ul className="p-3">
-                            <li>Your full name and section</li>
-                            <li>Links to each of the lab assignments</li>
-                            <li>Link to the Kanbas application</li>
-                            <li>Links to all relevant source code repositories</li>
-                        </ul>
-                        The Kanbas application should include a link to navigate back to the
-                        landing page.
-                    </p>
+                    <textarea
+                        className="form-control mb-3"
+                        id="wd-assignment-description"
+                        rows={7}
+                        value={assignment.description || ""}
+                        onChange={(e) =>
+                            setAssignment({...assignment, description: e.target.value})
+                        }
+                    ></textarea>
                 </div>
-            </form>
-            <form>
                 <div className="form-group row mb-3">
                     <label
                         htmlFor="wd-points"
@@ -56,7 +59,10 @@ export default function AssignmentEditor() {
                             type="text"
                             className="form-control"
                             id="wd-points"
-                            value={100}
+                            value={assignment.points || ""}
+                            onChange={(e) =>
+                                setAssignment({...assignment, points: e.target.value})
+                            }
                         />
                     </div>
                 </div>
@@ -115,7 +121,7 @@ export default function AssignmentEditor() {
                                         id="wd-text-entry"
                                     />
                                     <label className="form-check-label" htmlFor="wd-text-entry">
-                                        Text entry
+                                        Text Entry
                                     </label>
                                 </div>
                                 <div className="form-check mb-3">
@@ -151,7 +157,7 @@ export default function AssignmentEditor() {
                                         className="form-check-label"
                                         htmlFor="wd-student-annotation"
                                     >
-                                        Student annotation
+                                        Student Annotation
                                     </label>
                                 </div>
                                 <div className="form-check mb-3">
@@ -194,7 +200,10 @@ export default function AssignmentEditor() {
                                 type="date"
                                 className="form-control mb-3"
                                 id="wd-due-date"
-                                value={assignment?.enddate ?? ""}
+                                value={assignment.duedate || ""}
+                                onChange={(e) =>
+                                    setAssignment({...assignment, duedate: e.target.value})
+                                }
                             />
                             <div className="row">
                                 <div className="col">
@@ -208,7 +217,13 @@ export default function AssignmentEditor() {
                                         type="date"
                                         className="form-control mb-3"
                                         id="wd-available-from"
-                                        value={assignment?.startdate ?? ""}
+                                        value={assignment.startdate || ""}
+                                        onChange={(e) =>
+                                            setAssignment({
+                                                ...assignment,
+                                                startdate: e.target.value,
+                                            })
+                                        }
                                     />
                                 </div>
                                 <div className="col">
@@ -222,7 +237,10 @@ export default function AssignmentEditor() {
                                         type="date"
                                         className="form-control mb-3"
                                         id="wd-available-until"
-                                        value={assignment?.enddate ?? ""}
+                                        value={assignment.enddate || ""}
+                                        onChange={(e) =>
+                                            setAssignment({...assignment, enddate: e.target.value})
+                                        }
                                     />
                                 </div>
                             </div>
@@ -234,18 +252,23 @@ export default function AssignmentEditor() {
                     <div className="col-sm-3"></div>
                     <div className="col-sm-9 text-end">
                         <hr/>
-                        <Link
-                            to={`/Kanbas/Courses/${cid}/Assignments`}
-                            className="btn btn-secondary me-2"
-                        >
-                            Cancel
+                        <Link to={`/Kanbas/Courses/${cid}/Assignments`}>
+                            <button className="btn btn-secondary me-2">Cancel</button>
                         </Link>
-                        <Link
-                            to={`/Kanbas/Courses/${cid}/Assignments`}
+                        <button
+                            onClick={() => {
+                                if (courseAssignment) {
+                                    dispatch(updateAssignment(assignment));
+                                } else {
+                                    dispatch(addAssignment(assignment));
+                                }
+                                navigate(`/Kanbas/Courses/${cid}/Assignments`);
+                            }}
                             className="btn btn-danger"
+                            id="wd-assignments-save"
                         >
                             Save
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </form>

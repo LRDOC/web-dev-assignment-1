@@ -1,15 +1,22 @@
-import { FaPlus } from "react-icons/fa6";
+import {FaPlus} from "react-icons/fa6";
 import GreenCheckmark from "./checkmark";
-import { MdDoNotDisturbAlt } from "react-icons/md";
+import {MdDoNotDisturbAlt} from "react-icons/md";
+import ModuleEditor from "./ModuleEditor";
 
-export default function ModulesControls() {
+export default function ModulesControls({moduleName, setModuleName, addModule,}: {
+    moduleName: string;
+    setModuleName: (title: string) => void;
+    addModule: () => void;
+}) {
     return (
         <div id="wd-modules-controls" className="text-nowrap">
             <button
                 id="wd-add-module-btn"
                 className="btn btn-lg btn-danger me-1 float-end"
+                data-bs-toggle="modal"
+                data-bs-target="#wd-add-module-dialog"
             >
-                <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
+                <FaPlus className="position-relative me-2" style={{bottom: "1px"}}/>
                 Module
             </button>
             <div className="dropdown d-inline me-1 float-end">
@@ -19,51 +26,52 @@ export default function ModulesControls() {
                     type="button"
                     data-bs-toggle="dropdown"
                 >
-                    <GreenCheckmark />
+                    <GreenCheckmark/>
                     Publish All
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <button
+                        <a
                             id="wd-publish-all-modules-and-items-btn"
                             className="dropdown-item"
-                            type="button"
+                            href="#"
                         >
-                            <GreenCheckmark />
+                            <GreenCheckmark/>
                             Publish all modules and items
-                        </button>
+                        </a>{" "}
                     </li>
                     <li>
-                        <button
+                        <a
                             id="wd-publish-modules-only-button"
                             className="dropdown-item"
-                            type="button"
+                            href="#"
                         >
-                            <GreenCheckmark />
+                            <GreenCheckmark/>
                             Publish modules only
-                        </button>
+                        </a>{" "}
                     </li>
                     <li>
-                        <button
+                        <a
                             id="wd-unpublish-all-modules-and-items"
                             className="dropdown-item"
-                            type="button"
+                            href="#"
                         >
-                            <MdDoNotDisturbAlt className="me-2 fs-5" />
-                            Unpublish all modules and more
-                        </button>
+                            <MdDoNotDisturbAlt className="me-2 fs-5"/>
+                            Unpublish all modules and items
+                        </a>{" "}
                     </li>
                     <li>
-                        <button
+                        <a
                             id="wd-unpublish-modules-only"
                             className="dropdown-item"
-                            type="button"
+                            href="#"
                         >
-                            <MdDoNotDisturbAlt className="me-2 fs-5" />
+                            <MdDoNotDisturbAlt className="me-2 fs-5"/>
                             Unpublish modules only
-                        </button>
+                        </a>{" "}
                     </li>
                 </ul>
+                {" "}
             </div>
 
             <button
@@ -71,7 +79,8 @@ export default function ModulesControls() {
                 className="btn btn-lg btn-secondary me-1 float-end"
                 type="button"
             >
-                Show Less ...
+                {" "}
+                Collapse All
             </button>
 
             <button
@@ -81,6 +90,12 @@ export default function ModulesControls() {
             >
                 View Progress
             </button>
+            <ModuleEditor
+                dialogTitle="Add Module"
+                moduleName={moduleName}
+                setModuleName={setModuleName}
+                addModule={addModule}
+            />
         </div>
     );
 }
