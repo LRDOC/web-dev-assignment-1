@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-    addAssignment,
-    updateAssignment,
-    setAssignments,
-}
-
-from "./reducer";
+import { addAssignment, updateAssignment, setAssignments } from "./reducer";
 import * as client from "./client";
 
 export default function AssignmentEditor() {
@@ -31,10 +25,9 @@ export default function AssignmentEditor() {
         enddate: "",
         _id: "",
     });
+
     const fetchAssignment = async () => {
-        const fetchedAssignments = await client.findAssignmentsForCourse(
-            cid as string
-        );
+        const fetchedAssignments = await client.findAssignmentsForCourse(cid as string);
         dispatch(setAssignments(fetchedAssignments));
         const specificAssignment = fetchedAssignments.find(
             (assignment: any) => assignment._id === aid
@@ -54,18 +47,18 @@ export default function AssignmentEditor() {
             });
         }
     };
+
     useEffect(() => {
         fetchAssignment();
-    }, [cid, aid, dispatch]);
+    }, [fetchAssignment, cid, aid, dispatch]);
+
     const createAssignment = async (assignment: any) => {
-        const newAssignment = await client.createAssignment(
-            cid as string,
-            assignment
-        );
+        const newAssignment = await client.createAssignment(cid as string, assignment);
         dispatch(addAssignment(newAssignment));
     };
+
     const saveAssignment = async (assignment: any) => {
-        const status = await client.updateAssignment(assignment);
+        await client.updateAssignment(assignment);
         dispatch(updateAssignment(assignment));
     };
 
@@ -84,7 +77,7 @@ export default function AssignmentEditor() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="wd-description"></label>
+                    <label htmlFor="wd-description">Description</label>
                     <textarea
                         className="form-control mb-3"
                         id="wd-assignment-description"
@@ -188,10 +181,7 @@ export default function AssignmentEditor() {
                                         type="checkbox"
                                         id="wd-media-recordings"
                                     />
-                                    <label
-                                        className="form-check-label"
-                                        htmlFor="wd-media-recordings"
-                                    >
+                                    <label className="form-check-label" htmlFor="wd-media-recordings">
                                         Media Recordings
                                     </label>
                                 </div>
@@ -201,10 +191,7 @@ export default function AssignmentEditor() {
                                         type="checkbox"
                                         id="wd-student-annotation"
                                     />
-                                    <label
-                                        className="form-check-label"
-                                        htmlFor="wd-student-annotation"
-                                    >
+                                    <label className="form-check-label" htmlFor="wd-student-annotation">
                                         Student Annotation
                                     </label>
                                 </div>
