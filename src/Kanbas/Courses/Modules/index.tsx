@@ -4,7 +4,7 @@ import LessonControlButtons from "./LessonControlButton";
 import { BsGripVertical } from "react-icons/bs";
 import { useParams } from "react-router";
 import * as client from "./client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import {
     setModules,
@@ -20,25 +20,30 @@ export default function Modules() {
     const [moduleName, setModuleName] = useState("");
     const { modules } = useSelector((state: any) => state.modulesReducer);
     const dispatch = useDispatch();
+
     const saveModule = async (module: any) => {
-        const status = await client.updateModule(module);
+        await client.updateModule(module); // No need to assign to `status` if it's not used
         dispatch(updateModule(module));
     };
+
     const removeModule = async (moduleId: string) => {
         await client.deleteModule(moduleId);
         dispatch(deleteModule(moduleId));
     };
+
     const createModule = async (module: any) => {
         const newModule = await client.createModule(cid as string, module);
         dispatch(addModule(newModule));
     };
-    const fetchModules = async () => {
+
+    const fetchModules = useCallback(async () => {
         const modules = await client.findModulesForCourse(cid as string);
         dispatch(setModules(modules));
-    };
+    }, [cid, dispatch]);
+
     useEffect(() => {
         fetchModules();
-    }, []);
+    }, [fetchModules]);
 
     return (
         <div>

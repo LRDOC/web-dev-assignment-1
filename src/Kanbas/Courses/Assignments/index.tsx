@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import {FaPlus} from "react-icons/fa6";
 import {BsGripVertical} from "react-icons/bs";
 import {FaSearch} from "react-icons/fa";
@@ -20,21 +20,27 @@ export default function Assignments() {
         (assignment: any) => assignment.course === cid
     );
     const dispatch = useDispatch();
-    const fetchAssignments = async () => {
+
+    const fetchAssignments = useCallback(async () => {
         const assignments = await client.findAssignmentsForCourse(cid as string);
         dispatch(setAssignments(assignments));
-    };
+    }, [cid, dispatch]);
+
     useEffect(() => {
         fetchAssignments();
-    }, [cid, dispatch]);
+    }, [fetchAssignments]);
+
     const removeAssignment = async (aid: string) => {
         await client.deleteAssignment(aid);
         dispatch(deleteAssignment(aid));
     };
+
     const [selectedAssignment, setSelectedAssignment] = useState<any>(null);
+
     const handleDeleteButton = (assignment: any) => {
         setSelectedAssignment(assignment);
     };
+
     const handleConfirmDelete = () => {
         if (selectedAssignment) {
             removeAssignment(selectedAssignment._id);
@@ -46,9 +52,9 @@ export default function Assignments() {
         <div id="wd-assignments" className="text-nowrap">
             <div className="d-flex align-items-center justify-content-between">
                 <div className="input-group">
-          <span className="input-group-text bg-white border-end-0">
-            <FaSearch/>
-          </span>
+                    <span className="input-group-text bg-white border-end-0">
+                        <FaSearch/>
+                    </span>
                     <input
                         className="form-control form-control-lg border-start-0"
                         type="text"
