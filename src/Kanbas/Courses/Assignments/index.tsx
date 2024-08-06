@@ -1,31 +1,43 @@
-import React, { useState } from "react";
-import { FaPlus } from "react-icons/fa6";
-import { BsGripVertical } from "react-icons/bs";
-import { FaSearch } from "react-icons/fa";
+import React, {useState, useEffect} from "react";
+import {FaPlus} from "react-icons/fa6";
+import {BsGripVertical} from "react-icons/bs";
+import {FaSearch} from "react-icons/fa";
 import AssignmentControlButtons from "./ControlPercent";
-import { GoTriangleDown } from "react-icons/go";
+import {GoTriangleDown} from "react-icons/go";
 import AssignmentButtons from "./AssignmentButton";
-import { Link, useParams } from "react-router-dom";
-import { deleteAssignment } from "./reducer";
-import { useDispatch, useSelector } from "react-redux";
-import { IoEllipsisVertical } from "react-icons/io5";
+import {Link, useParams} from "react-router-dom";
+import {deleteAssignment, setAssignments} from "./reducer";
+import {useDispatch, useSelector} from "react-redux";
+import {IoEllipsisVertical} from "react-icons/io5";
 import GreenCheckmark from "../Modules/checkmark";
-import { FaTrash } from "react-icons/fa";
+import {FaTrash} from "react-icons/fa";
+import * as client from "./client";
 
 export default function Assignments() {
-    const { cid } = useParams();
-    const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+    const {cid} = useParams();
+    const {assignments} = useSelector((state: any) => state.assignmentsReducer);
     const courseAssignments = assignments.filter(
         (assignment: any) => assignment.course === cid
     );
     const dispatch = useDispatch();
+    const fetchAssignments = async () => {
+        const assignments = await client.findAssignmentsForCourse(cid as string);
+        dispatch(setAssignments(assignments));
+    };
+    useEffect(() => {
+        fetchAssignments();
+    }, [cid, dispatch]);
+    const removeAssignment = async (aid: string) => {
+        await client.deleteAssignment(aid);
+        dispatch(deleteAssignment(aid));
+    };
     const [selectedAssignment, setSelectedAssignment] = useState<any>(null);
     const handleDeleteButton = (assignment: any) => {
         setSelectedAssignment(assignment);
     };
     const handleConfirmDelete = () => {
         if (selectedAssignment) {
-            dispatch(deleteAssignment(selectedAssignment._id));
+            removeAssignment(selectedAssignment._id);
             setSelectedAssignment(null);
         }
     };
@@ -35,7 +47,7 @@ export default function Assignments() {
             <div className="d-flex align-items-center justify-content-between">
                 <div className="input-group">
           <span className="input-group-text bg-white border-end-0">
-            <FaSearch />
+            <FaSearch/>
           </span>
                     <input
                         className="form-control form-control-lg border-start-0"
@@ -50,7 +62,7 @@ export default function Assignments() {
                 >
                     <FaPlus
                         className="position-relative me-2"
-                        style={{ bottom: "1px" }}
+                        style={{bottom: "1px"}}
                     />
                     Group
                 </button>
@@ -61,20 +73,20 @@ export default function Assignments() {
                     >
                         <FaPlus
                             className="position-relative me-2"
-                            style={{ bottom: "1px" }}
+                            style={{bottom: "1px"}}
                         />
                         Assignment
                     </button>
                 </Link>
             </div>
-            <br />
-            <br />
+            <br/>
+            <br/>
             <ul className="list-group rounded-0 border-gray">
                 <div className="wd-assignments-title p-3 ps-2 bg-secondary">
-                    <BsGripVertical className="me-2 fs-3" />
-                    <GoTriangleDown className="me-2 fs-5" />
+                    <BsGripVertical className="me-2 fs-3"/>
+                    <GoTriangleDown className="me-2 fs-5"/>
                     <strong className="fs-5">ASSIGNMENTS</strong>
-                    <AssignmentControlButtons />
+                    <AssignmentControlButtons/>
                 </div>
                 {courseAssignments.map((assignment: any) => (
                     <li key={assignment._id} className="list-group-item p-0 border-0">
@@ -84,7 +96,7 @@ export default function Assignments() {
                                 borderLeft: "5px solid #198754",
                             }}
                         >
-                            <AssignmentButtons />
+                            <AssignmentButtons/>
                             <div>
                                 <Link
                                     to={`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
@@ -94,9 +106,10 @@ export default function Assignments() {
                                 </Link>
                                 <p className="fs-6 mb-0">
                                     <span className="text-danger">Multiple Modules</span> |
-                                    <b> Available from</b> {assignment.startdate || "?"} <b>until</b> {assignment.enddate || "?"} at 12:00am |{" "}
-                                    <br />
-                                    <b>Due</b> {assignment.duedate || "?"} at 11:59pm | {assignment.points}pts
+                                    <b> Available from</b> {assignment.startdate || "?"}{" "}
+                                    <b>until</b> {assignment.enddate || "?"} at 12:00am | <br/>
+                                    <b>Due</b> {assignment.duedate || "?"} at 11:59pm |{" "}
+                                    {assignment.points}pts
                                 </p>
                             </div>
                             <div className="ms-auto">
@@ -107,8 +120,8 @@ export default function Assignments() {
                                         data-bs-target="#deleteModal"
                                         onClick={() => handleDeleteButton(assignment)}
                                     />
-                                    <GreenCheckmark />
-                                    <IoEllipsisVertical className="fs-4" />
+                                    <GreenCheckmark/>
+                                    <IoEllipsisVertical className="fs-4"/>
                                 </div>
                             </div>
                         </div>
