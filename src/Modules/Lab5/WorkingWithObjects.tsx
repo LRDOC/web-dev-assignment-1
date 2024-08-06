@@ -25,7 +25,8 @@ export default function WorkingWithObjects() {
             <h4>Modifying Properties</h4>
             <a
                 id="wd-update-assignment-title"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary float-end"
                 href={`${ASSIGNMENT_API_URL}/title/${assignment.title}`}
             >
@@ -42,7 +43,8 @@ export default function WorkingWithObjects() {
             <br />
             <a
                 id="wd-update-assignment-score"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary float-end"
                 href={`${ASSIGNMENT_API_URL}/score/${assignment.score}`}
             >
@@ -60,7 +62,8 @@ export default function WorkingWithObjects() {
             <br />
             <a
                 id="wd-update-assignment-completed"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary float-end"
                 href={`${ASSIGNMENT_API_URL}/completed/${assignment.completed}`}
             >
@@ -84,7 +87,8 @@ export default function WorkingWithObjects() {
             <br />
             <a
                 id="wd-update-module-name"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary float-end"
                 href={`${MODULE_API_URL}/name/${module.name}`}
             >
@@ -99,7 +103,8 @@ export default function WorkingWithObjects() {
             <br />
             <a
                 id="wd-update-module-description"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary float-end"
                 href={`${MODULE_API_URL}/description/${module.description}`}
             >
@@ -115,7 +120,8 @@ export default function WorkingWithObjects() {
             <h4>Retrieving Objects</h4>
             <a
                 id="wd-retrieve-assignments"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/assignment`}
             >
@@ -125,6 +131,7 @@ export default function WorkingWithObjects() {
             <a
                 id="wd-retrieve-modules"
                 target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/module`}
             >
@@ -134,7 +141,8 @@ export default function WorkingWithObjects() {
             <h4>Retrieving Properties</h4>
             <a
                 id="wd-retrieve-assignment-title"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/assignment/title`}
             >
@@ -143,7 +151,8 @@ export default function WorkingWithObjects() {
             <br />
             <a
                 id="wd-retrieve-assignment-score"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/assignment/score`}
             >
@@ -152,7 +161,8 @@ export default function WorkingWithObjects() {
             <br />
             <a
                 id="wd-retrieve-assignment-completed"
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/assignment/completed`}
             >
@@ -163,7 +173,8 @@ export default function WorkingWithObjects() {
                 id="wd-retrieve-module-name"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/module/name`}
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
             >
                 Get Module Name
             </a>
@@ -172,7 +183,8 @@ export default function WorkingWithObjects() {
                 id="wd-retrieve-module-description"
                 className="btn btn-primary mb-2"
                 href={`${REMOTE_SERVER}/lab5/module/description`}
-                target="blank"
+                target="_blank"
+                rel="noreferrer"
             >
                 Get Module Description
             </a>
